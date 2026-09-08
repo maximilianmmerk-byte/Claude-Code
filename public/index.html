@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PL Draft Picker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">⚽</span>
+      <div>
+        <h1>PL Fantasy Draft Picker</h1>
+        <p id="gameweek-label" class="subtitle">Loading gameweek…</p>
+      </div>
+    </div>
+    <button id="refresh-btn" class="btn-ghost" title="Re-fetch latest FPL data">↻ Refresh data</button>
+  </header>
+
+  <main>
+    <section class="controls">
+      <input id="search-input" type="search" placeholder="Search player name…" />
+
+      <select id="team-filter">
+        <option value="">All teams</option>
+      </select>
+
+      <div id="position-tabs" class="position-tabs">
+        <button class="tab active" data-position="">All</button>
+        <button class="tab" data-position="GKP">GKP</button>
+        <button class="tab" data-position="DEF">DEF</button>
+        <button class="tab" data-position="MID">MID</button>
+        <button class="tab" data-position="FWD">FWD</button>
+      </div>
+
+      <select id="sort-select">
+        <option value="attractivenessScore">Sort: Attractiveness score</option>
+        <option value="form">Sort: Form</option>
+        <option value="epNext">Sort: Expected points (next GW)</option>
+        <option value="totalPoints">Sort: Total points</option>
+        <option value="goals">Sort: Goals</option>
+        <option value="assists">Sort: Assists</option>
+        <option value="priceMillions">Sort: Price</option>
+        <option value="selectedByPercent">Sort: Popularity %</option>
+      </select>
+    </section>
+
+    <p id="status-line" class="status-line"></p>
+
+    <section id="player-grid" class="player-grid" aria-live="polite"></section>
+  </main>
+
+  <div id="modal-backdrop" class="modal-backdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

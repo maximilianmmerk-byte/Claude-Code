@@ -1,0 +1,18 @@
+{
+  "name": "pl-fantasy-draft-picker",
+  "version": "1.0.0",
+  "description": "Find the Premier League Fantasy Draft players most likely to score big next gameweek.",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
